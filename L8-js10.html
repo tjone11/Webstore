@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a new element</title>
+
+  <script type="text/javaScript">
+  function add_paragraph() {
+    var original=document.getElementById("original");
+    var new_paragraph=document.createElement("p");
+    var current_time=new Date();
+    var this_text="This new paragraph appeared at " + current_time + ".";
+      //Even after the browser has rendered all HTML, it's possible to add *new* HTML elements.
+      //createTextNode()-appendChild()-insertBefore() is one typical pattern for adding new textual content.
+    var new_content=document.createTextNode(this_text);
+    new_paragraph.appendChild(new_content);
+    document.body.insertBefore(new_paragraph, original);
+  }
+  </script>
+</head>
+
+<body>
+  <h1>Create a new element</h1>
+  <p id="original">This is the text that appears when the display first loads.</p>
+  <button type="button" onclick="add_paragraph();">Click on me to add new content</button>
+  <p style="display:none;">Warning: you are within 20% of your limit.</p>
+</body>
+</html>

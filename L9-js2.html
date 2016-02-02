@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animation with JavaScript</title>
+
+  <script type="text/javascript">
+  // This page acts much the same as L9-js1.html did, with the exception that the frequency of moving
+  // the paragraph depends on the numeric value the end-user has entered in the input field.
+  function move_paragraph() {
+    next = current + "px";
+    current += 1;
+    if (current > 300) {
+        current = 0;
+    }
+    paragraph.style.left = next;
+    var rate = document.getElementById("rate").value;
+    setTimeout(move_paragraph, rate);
+  }
+  function init() {
+    paragraph = document.getElementById("original");
+    paragraph.style.position = "absolute";
+    current = 0;
+    move_paragraph();
+  }
+  </script>
+</head>
+
+<body onload = "init();">
+
+<h1>Animate with JavaScript</h1>
+  <!-- The number <input> tag is new with HTML5.
+  It provides a convenient way to enforce that
+  the end-user inputs a valid numeral within a
+  specified range. -->
+<form>
+<input id = "rate" type = "number" value = "18" min = "5" max="100"></input>
+</form>
+<p id = "original">Do you see me scrolling across the screen?</p>
+
+</body>
+</html>

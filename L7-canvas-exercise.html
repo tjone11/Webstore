@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Exercise</title>
+
+<script>
+  function f1() {
+    var canvas =
+    document.getElementById("smlRectangle");
+    context = canvas.getContext("2d");
+    var grd = context.createLinearGradient(0, 0, 150, 0);
+            grd.addColorStop(0.3, "lightblue");
+            grd.addColorStop(0.7, "darkblue");
+            context.fillStyle = grd;
+            context.scale(5,5);
+    context.fillRect(10, 20, 200, 100);
+  }
+</script>
+</head>
+<body onload="f1();">
+<canvas id="smlRectangle" height='300' width='500'>
+</canvas>
+</body>
+</html>

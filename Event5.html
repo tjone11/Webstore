@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>jQuery UI Dragging</title>
+<style type="text/css"><!--
+#dg2 {
+ width:180px;
+ height:100px;
+ margin:8px;
+ background:#a7daa8;
+}
+--></style>
+<script type="text/javascript" src="jquery_1.6.1.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.14.js"></script>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+  // sets the '#dg1' element as draggable and define some options
+  $('#dg1').draggable({
+    cursor: 'move',        // sets the cursor apperance
+    opacity: 0.35,         // opacity fo the element while it's dragged
+    stack: $('#dg1')       // brings the '#dg1' item to front
+  });
+
+  // sets the '#dg2' element as draggable
+  $('#dg2').draggable({
+    cursor: 'pointer',      // sets the cursor apperance
+    opacity: 0.35,          // opacity fo the element while it's dragged
+    stack: $('#dg2'),       // brings the '#dg2' item to front
+    axis: 'x'               // allow dragging only on the horizontal axis
+  });
+});
+--></script>
+</head>
+<body>
+<h4>Click and drag:</h4>
+<img src="happydog.jpg" alt="happydog" width="80" height="70" id="dg1" />
+<div id="dg2">Draggable only on horizontal axis,<br />
+Cursor sets to pointer.</div>
+</body>
+</html>

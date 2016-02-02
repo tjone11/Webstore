@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magic 8 ball</title>
+</head>
+
+  <style>
+
+
+  </style>
+
+<body>
+  
+  <input id="question"> <button id="ask">Ask a question!</button>
+  <p><div id="eightball_ouput"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+  <script>
+
+    var answers = [
+      "I don't see it in your a future.",
+      "You will need to make major changes in your life.",
+      "I recommend you consult a psychiatrist on that one.",
+      "You will fail.",
+      "You'll never know unless you try.",
+    ];
+
+    $("#ask").on('click', function() {
+      if ($("#question").val() != "") {
+        var thisAnswer = Math.floor( Math.random() * answers.length )
+
+        $("#eightball_ouput").html("<em>You asked: "+$("#question").val()+"</em>"+"<p>The Magic 8 Ball says..."+"<p><b>"+answers[thisAnswer]+"</b>");
+
+        $("#question").val("");
+      } else {
+        $("#eightball_ouput").html("<em>You must ask me a question!</em>");
+      }
+
+    })
+
+  </script>
+</body>
+</html>

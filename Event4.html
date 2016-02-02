@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning event functions</title>
+
+</head>
+
+<body>
+
+  <div id="sketch"></div>
+  <img  src="happydog.jpg" class="follow" style="position: absolute;"/>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+  var #sketch = function(event){
+  console.log(event.pageX, event.pageY, !!event.which)
+})
+
+$('body').on('mousemove', #sketch);
+
+
+
+</body>
+</html>

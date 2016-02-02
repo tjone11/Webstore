@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Objects</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script>
+
+  //   var my_cat = {};
+  //
+  //   my_cat.name = "Puss-n-Boots";
+  //   my_cat.age = 50;
+  //   my_cat.alive = true;
+  //   my_cat.creator = "Disney";
+  //   my_cat.weapon = "Sword";
+  //
+  //   for(var key in my_cat) {
+  //     console.log(my_cat[key]);
+  //   }
+  //
+  //   var target_key = "greeting";
+  //
+  //   for(var key in my_cat) {
+  //     if (key == 'color') {
+  //         $("#loop_output").append(my_cat[key]+"<br>");
+  //     } else if (my_cat[key] == "Sword");
+  //   } else if (key == target_key){
+  //         $("#loop_output").append(my_cat[key]+"<br>");
+  //   };
+  // }
+
+    // var numbers = [4, 78, 52, 109, 5];
+    //
+    // var doubled = {};
+    //
+    //   for(var counter = 0; counter < numbers.length; counter++){
+    //     doubled[numbers[counter]] = numbers[counter]*2;
+    //   }
+
+      // for(var key in doubled) {
+      //   console.log(key);
+      // }
+      //   console.log(doubled);
+
+      // var greeting = "Hello and welcome!";
+      //
+      // // console.log(greeting[0]);
+      //
+      // var words = greeting.split(' ');
+      // console.log(words);
+
+      // var favorites = []
+      //
+      // var famous = ['alex smith', 'amy whinehouse', 'cameron diaz', 'brad pitt',
+      //               'ashton kutcher', 'mark whalberg', 'morgan freeman', 'mila kunis'];
+      //
+      //     for(var a = 0; a < famous.length; a++) {
+      //         var firstcharacter = famous[a][0];
+      //         if(firstcharacter == "a") {
+      //             favorites.push(famous[a]);
+      //         }
+      //     };
+      //
+      //     console.log(favorites);
+      //
+          // var obama_jobs = []
+          //
+          // var politicos = {
+          //     secretary_of_state: 'hillary clinton',
+          //     potus: 'barack obama',
+          //     flotus: 'michelle obama',
+          //     vice_prez: 'joe biden',
+          //     gov_of_california: 'jerry brown'
+          //   }
+          //
+          // for(var key in politicos) {
+          // //  var last_name = politicos.match('obama');
+          //   if(politicos[key].match('obama')){
+          //     obama_jobs.push(politicos[key]);
+          //   }
+          // }
+          //
+          // console.log(obama_jobs);
+
+
+          var them_dogs = [{
+              name: 'Henry',
+              age: 0.5,
+              breed: 'Aussie',
+              food: 'kibble',
+              toys: ['tennis ball', 'chew toy'],
+              picture: 'http://rubyriverminiaustralianshepherds.com/wp-content/uploads/aussie-puppy-for-sale-940x412.jpg'
+          }, {
+              name: 'Tilly',
+              age: 5,
+              breed: 'Mutt',
+              food: 'kibble',
+              toys: ['bone', 'kong', 'squeaky toy'],
+              picture: 'http://www.dogchannel.com/images/zones/top_promo/excited-mixed-breed.jpg'
+          }, {
+              name: 'Apollo',
+              age: 10,
+              breed: 'Labrador',
+              food: 'absolutely anything',
+              toys: ['old sock', 'other old sock', 'more old socks'],
+              picture: 'http://media.cmgdigital.com/shared/img/photos/2014/08/01/5a/66/LadyLabrador.jpg'
+          }]
+
+          var all_toys = [];
+
+          for(var n = 0; n < them_dogs; n++) {
+            var dog = them_dogs[n];
+            console.log(dog.name);
+
+          for(var t = 0; t < dog.toys.length; t++){
+            all_toys.push(dog.toys[t]);
+          };
+        };
+
+        console.log(all_toys);
+
+        var look_up_toy_owner = function(toyToFind) {
+
+          for (var i = 0; i < them_dogs.length; i++) {
+            var dog = them_dogs[i];
+
+            for (var t = 0; t < dog.toys.length; t++) {
+              if (dog.toys[t] == toyToFind) {
+                  return dog.name;
+              };
+            };
+          };
+              return
+        }
+
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning events</title>
+    <style>
+    .highlighted {
+      background-color: yellow;
+    }
+    </style>
+
+</head>
+
+<body>
+
+  <button id="thisButton">Click me!</button>
+  <div id="output"></div>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script>
+    var beeper = function() {
+      document.querySelector("#output").innerHTML += "beep<br>";
+      var randomColor = Math.random().toString(16).slice(2, 8);
+      document.querySelector("body").style.backgroundColor = "#"+randomColor;
+    }
+    document.querySelector("#thisButton").addEventListener("click", beeper);
+
+  //  $('#thisButton').on('click', function() {
+  //    $("body").css('background-color', 'blue');
+  //  });
+
+    $("#thisButton").on('mouseover', function() {
+      console.log("Moused over!");
+      $("#output").addClass("highlighted");
+    });
+
+    $("#thisButton").on('mouseleave', function() {
+      console.log("The mouse has left the element!");
+      $("#output").removeClass("highlighted");
+    });
+
+//   var mouseTracker=function(event) {
+//   }
+
+//    $("body").on("mouseover", mouseTracker);
+  </script>
+</body>
+</html>

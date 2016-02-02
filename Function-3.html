@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning functions</title>
+
+
+
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+
+  var log_and_return = function() {
+    console.log(arguments);
+    return arguments;
+
+  log_and_return(3*8);
+  log_and_return("This lesson is tedious");
+  log_and_return(50);
+
+  var returned_values = log_and_return(3*8, "This lesson is tedious", 50);
+
+  log_and_return(returned_values);
+
+  </script>
+
+</body>
+</html>

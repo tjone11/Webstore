@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validation of a user entry</title>
+
+  <script type="text/javaScript">
+
+  function validate() {
+    var value = document.getElementById("input1").value;
+    if (isNaN(value)) {
+      modifier = "not ";
+    } else {
+      modifier = "";
+    }
+    var report = "You entered '" + value + "'; this is " + modifier + "a valid number.";
+    alert(report)
+  }
+  </script>
+</head>
+
+<body>
+  <h1>Validation of a user entry</h1>
+  <form name="calculator">
+    <input type="text" id="input1"></input>
+    <button type="button" onclick="validate();">Click me to see what I think of your entry</button>
+  </form>
+</body>
+</html>

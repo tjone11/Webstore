@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The onLoad event handler</title>
+
+  <script type="text/javaScript">
+
+  function validate() {
+    var value = document.getElementById("input1").value;
+    if (isNaN(value)) {
+        modifier = "not ";
+    } else {
+        modifier = "";
+    }
+    var report = "You entered '" + value + "'; this is " + modifier + "a valid number.";
+    alert(report);
+  }
+
+  function init() {
+    alert("At this point, it is guaranteed that all HTML elements have loaded.")
+  ;
+  }
+  </script>
+</head>
+
+<body onload = "init();">
+  <h1>The onLoad event handler</h1>
+  <form name="calculator">
+    <input type="text" id="input1"></input>
+    <button type="button" onclick="validate();">Click me to see what I think of your entry</button>
+  </form>
+</body>
+</html>

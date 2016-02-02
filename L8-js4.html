@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>First use of jQuery</title>
+
+  <script type="text/javaScript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.js"></script>
+  <script type="text/javaScript">
+      // Once the HTML document loads, execute
+      // the function within ready().
+  $(document).ready(function() {
+          // Each paragraph recieves a "click" action;
+          // hide that particular paragraph.
+      $("p").click(function() {
+        $(this).hide();
+      })
+  })
+
+  </script>
+</head>
+
+<body>
+  <p>This is the first paragraph.  Click on me to make me disappear.
+  <p>This is the second paragraph.
+  <p>This is the third paragraph.
+
+</body>
+</html>

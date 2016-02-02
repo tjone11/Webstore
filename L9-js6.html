@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parsing complex data</title>
+
+  <script type="text/javascript">
+    //The next statement needs to appear on a single line.
+  sample_data = "Mobil-17: 3.49; Kroger-03: 3.36; Exxon-01: 3.59; Kroger-04: 3.49; Valero-A: 3.41; Chevron-01: 3.52"; of_interest = "Kroger-04";
+    //sample_data is an example of a typical piece of structered data:  a string with parts seperated by semi-colons, where each of the parts
+    //has two subparts seperated by a colon.  Many other formats are possible.  To parse this particular format, init() splits on two
+    //distinct seperators.
+  function init() {
+    var paragraph_object = document.getElementById("paragraph");
+    var data_list = sample_data.split(';');
+    for (j = 0; j < data_list.length; j++) {
+        parts = data_list[j].split(':');
+        var site = parts[0].trim();
+        if (site == of_interest) {
+          var message = "Given the sample data '" + sample_data + "', this program parsed out the price $" + parts[1].trim() + "for the " + site + " site.";
+          paragraph_object.innerHTML = message;
+          }
+      }
+  }
+  </script>
+</head>
+
+<body onload = "init();">
+
+  <h1>Parsing complex data</h1>
+  <p id = "paragraph">Welcome.</p>
+
+</body>
+</html>

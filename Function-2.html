@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning functions</title>
+
+
+
+</head>
+
+<body>
+
+  <div id="output"></div>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script type="text/javascript">
+
+  var get_sentence = function() {
+    var rand = Math.ceil( Math.random() * 4);
+    var sentence1="What is the time?";
+    var sentence2="You made a mistake.";
+    var sentence3="I don't understand you";
+    var sentence4="Get off my lawn!";
+
+    if (rand==1) {
+      return sentence1;
+    }
+
+    if (rand==2) {
+      return sentence2;
+    }
+
+    if (rand==3) {
+      return sentence3;
+    }
+
+    if (rand==4) {
+      return sentence4;
+    }
+  }
+
+  var new_sentence = get_sentence();
+
+
+
+
+    $("#output").append("<p>" + new_sentence + "</p>");
+
+
+
+
+  </script>
+
+</body>
+</html>

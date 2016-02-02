@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Events</title>
+  <style>
+  .highlighted {
+    background-color: yellow;
+  }
+
+  #flames {
+    position: fixed;
+    display: none;
+    pointer-events: none;
+  }
+
+  .filler {
+    -webkit-user-select: none; /*Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+  }
+  </style>
+
+</head>
+
+<body>
+  <!-- <div id="target">This is the target</div> -->
+  <button id="thisButton">Click me!</button>
+  <div id="output"></div>
+  <img id="flames" src="http://www.clipartbest.com/cliparts/dT8/5Ke/dT85Kednc.gif">
+
+  <div class="filler">Bacon ipsum dolor amet capicola cupim fatback ball tip shoulder sirloin ribeye porchetta. T-bone capicola swine doner fatback tongue drumstick, chuck jowl sausage tenderloin turducken meatloaf cow. Biltong meatloaf landjaeger, leberkas picanha ham hock pork loin andouille doner strip steak kevin. Turkey bacon ground round cow, swine t-bone fatback ham pig tail venison corned beef turducken pork chop. Cow frankfurter fatback spare ribs tri-tip sirloin pork chop meatball ham hock tongue.
+
+  Beef ribs ball tip boudin, rump pastrami bresaola meatball alcatra sirloin tri-tip pig. Shank spare ribs rump boudin filet mignon cow, brisket alcatra short ribs. Boudin ball tip pork loin, jerky tri-tip turducken tongue pastrami t-bone. Prosciutto venison shankle turducken pancetta, sirloin corned beef short loin pork turkey pork belly chicken doner beef. Capicola tail pork belly bacon pastrami, pancetta bresaola meatloaf beef ribs strip steak. Picanha meatball pancetta biltong.
+
+  Pig sirloin t-bone, beef sausage ribeye brisket spare ribs cupim salami short ribs. Ham drumstick corned beef alcatra. Venison brisket jowl cupim cow pork leberkas. Rump tri-tip pork chop, porchetta beef ribs jowl ball tip spare ribs leberkas shoulder landjaeger ham. Rump sausage picanha pastrami boudin chuck. Tri-tip ham hock filet mignon cow pork pig jerky shankle tail chicken landjaeger pork belly kevin beef ribs. Ball tip doner shoulder, boudin pastrami cow venison ham hock.
+
+  Strip steak fatback turkey beef ball tip prosciutto turducken chuck. Sirloin shoulder frankfurter venison doner swine. Venison shoulder pig sausage ribeye pork belly pancetta spare ribs beef ribs. Ham hock venison rump meatloaf ball tip frankfurter spare ribs cow turkey pork kielbasa corned beef shankle swine. Bacon shoulder turducken shank.
+
+  Sirloin chicken frankfurter bacon prosciutto. Tongue pig cupim bresaola, turducken andouille flank kevin jerky capicola pork beef ribs porchetta. Chuck short ribs cupim chicken pancetta shoulder. Meatloaf pork chop turkey beef, sirloin porchetta fatback alcatra corned beef picanha venison leberkas.</div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script>
+
+  var beeper = function() {
+    document.querySelector("#output").innerHTML += "beep<br>";
+    document.querySelector("body").style.backgroundColor = "#"+randomColor;
+  }
+
+  document.querySelector("#thisButton").addEventListener("click", beeper);
+
+  $("#thisButton").on('mouseover', function() {
+    console.log("Moused over!");
+    $("#output").addClass("highlighted");
+  });
+
+  $("#thisButton").on('mouseleave', function() {
+    console.log("The mouse has left the element!");
+    $("#output").removeClass("highlighted");
+  });
+
+  var flames = $("#flames");
+
+  var mouseTracker = function(event) {
+    if (event.which == 0) {
+      flames.css("display", "none");
+      $("body").css("cursor", "default");
+    } else {
+      flames.css("display", "block");
+      $("body").css("cursor", "none");
+
+      flames.css("top", (event.pageY-50)+"px");  //top: 60px
+      flames.css("left", (event.pageX-50)+"px");  //left: 60px
+    }
+  }
+
+  $("body").on("mousemove", mouseTracker);
+  </script>
+</body>
+</html>

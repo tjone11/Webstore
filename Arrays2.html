@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning arrays</title>
+
+  <style>
+
+
+  </style>
+
+<body>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+  <script>
+    var bucket_list = ["Go to Africa", "Learn to fly"];
+
+    bucket_list.push("Run a marathon", "Throw farewell party for all of my family and friends");
+
+    bucket_list.unshift("Make a million dollars", "Buy a fancy sports car");
+
+    // console.log("Length"+bucket_list.length);
+    // console.log(bucket_list);
+    //
+    // var dying_wish = bucket_list.pop();
+    //
+    // console.log(dying_wish);
+    //
+    // var do_it_now = bucket_list.shift();
+    //
+    // console.log("Dying wish: "+dying_wish);
+    // console.log("Do it now: "+do_it_now);
+    //
+    // console.log("New array length: "+bucket_list.length);
+    // console.log(bucket_list);
+
+    var i = 0;
+
+      while(i < bucket_list.length) {
+        console.log(i, bucket_list[i]);
+        //console.log(bucket_list[i]);
+        i++;
+      }
+
+  </script>
+</body>
+</html>
